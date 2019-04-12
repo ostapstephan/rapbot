@@ -9,18 +9,15 @@ from keras.layers import Dense
 from keras.layers import LSTM
 import pickle
 
-# from keras.preprocessing.text import Tokenizer
-# from keras.layers import Embedding, Dense, Flatten, Conv1D, Dropout # Rnn, lstm
-# from sklearn.model_selection import train_test_split
-# from keras.preprocessing.sequence import pad_sequences
-# from keras import regularizers
+DATA = 'rapKeene.txt'
+LOG_DIR = './logDir'
 
-fileName = 'rapKeene.txt'
+
 maxLineLen = 0
 c=0
 C=0
 
-with open(fileName) as f:
+with open(DATA) as f:
     text = f.read()
     C = len(text) 
     print(type(text))
@@ -41,14 +38,19 @@ mapping = dict((c, i) for i, c in enumerate(chars))
 #97 chars 
 
 
+for i in range(len(s)):
+    print(s[i:i+10])
 
 
 
 
+# from keras.preprocessing.text import Tokenizer
+# from keras.layers import Embedding, Dense, Flatten, Conv1D, Dropout # Rnn, lstm
+# from sklearn.model_selection import train_test_split
+# from keras.preprocessing.sequence import pad_sequences
+# from keras import regularizers
 
-
-
-# '''
+'''
 # load doc into memory
 def load_doc(filename):
     # open the file as read only
